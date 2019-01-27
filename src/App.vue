@@ -26,10 +26,21 @@ export default {
   },
   methods:{
     deleteTodo(id){
-      this.todo_list = this.todo_list.filter(todo => todo.id !== id)
+      // Call API to delete
+      axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+        .then(res => this.todo_list = this.todo_list.filter(todo => todo.id !== id))
+        .catch(err => console.log(err))
     },
     addTodo(newTodo){
-      this.todo_list = [...this.todo_list,newTodo]
+      // Add new task to API
+      const { title, completed } = newTodo
+
+      axios.post("https://jsonplaceholder.typicode.com/todos",{
+        title,
+        completed
+      })
+        .then(res => this.todo_list = [...this.todo_list, res.data])
+        .catch(err => console.log(err))
     }
   },
   created() {
