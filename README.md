@@ -1,8 +1,15 @@
-# todolist
+# TodoList
+
+![](TodoListByVueJS.png?raw=true)
 
 ## Project setup
 ```
 npm install
+```
+
+### Run Vue UI
+```
+vue ui
 ```
 
 ### Compiles and hot-reloads for development
