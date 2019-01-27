@@ -18,7 +18,10 @@ export default {
     }
   },
   methods: {
-    addTodo() {
+    addTodo(e) {
+      // Don't reload page when submit
+      e.preventDefault()
+
       const newTodo = {
         id: uuid.v4(),
         title: this.title,
