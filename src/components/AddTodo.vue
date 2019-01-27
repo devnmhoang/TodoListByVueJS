@@ -30,6 +30,9 @@ export default {
 
       // Send up to parent
       this.$emit('add-todo', newTodo)
+
+      // Clear after submit
+      this.title = ''
     }
   }
 }
